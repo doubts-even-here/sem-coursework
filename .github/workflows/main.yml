@@ -2,7 +2,7 @@ name: Workflow for TW Coursework
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   build:
@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: develop
 
     - name: Set up JDK
       uses: actions/setup-java@v2
