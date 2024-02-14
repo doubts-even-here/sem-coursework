@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - develop
 
 jobs:
   build:
@@ -12,6 +11,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: develop
 
     - name: Set up JDK
       uses: actions/setup-java@v2
@@ -23,6 +24,4 @@ jobs:
       run: mvn clean install
 
     - name: Build Docker image
-      run: 
-        cd sql
-        sudo docker build .
+      run: docker build -f sql/Dockerfile -t sql/dockerfile:latest .
