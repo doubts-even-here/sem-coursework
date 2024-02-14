@@ -8,8 +8,8 @@
     - [x] Correct branches for GitFlow workflow created - includes master, develop, and release branches.
     - [ ] First release created on GitHub.
     - [ ] Code of Conduct defined.
-    - [ ] Issues being used on GitHub.
-    - [ ] Tasks defined as user stories.
+    - [x] Issues being used on GitHub.
+    - [x] Tasks defined as user stories.
     - [ ] Full use cases defined.
     - [ ] Use case diagram created.
 
