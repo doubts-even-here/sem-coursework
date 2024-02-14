@@ -2,7 +2,6 @@ name: Workflow for TW Coursework
 on:
   push:
     branches:
-      - master
       - develop
 
 jobs:
