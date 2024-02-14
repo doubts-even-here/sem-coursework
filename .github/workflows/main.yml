@@ -24,6 +24,6 @@ jobs:
       run: mvn clean install
 
     - name: Build Docker image
-      run: 
+      run:
         cd sql
-        sudo docker build .
+        docker build . -t sql/Dockerfile:latest
