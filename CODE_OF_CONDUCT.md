@@ -122,3 +122,4 @@ https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
 
 This is a test for the GitHub action
+This is the second test for GitHub action
