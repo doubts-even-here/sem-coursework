@@ -17,18 +17,16 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          maven-version: '3.8.1'
 
       - name: Build JAR
         run: mvn clean install
-        working-directory: master
 
       - name: Set Up Docker
         uses: docker/setup-buildx-action@v1
 
       - name: Build Docker Image
         run: |
-          cd path/to/your/project/sql
-          sudo docker build -t sql/sql-server.dockerfile:latest .
-          sudo docker push sql/sql-server.dockerfile:latest
+          cd sql/world.sql
+          sudo docker build -t sql-server-image:latest -f sql-server.dockerfile .
+          sudo docker push sql-server-image:latest
 
