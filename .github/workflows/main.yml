@@ -24,4 +24,4 @@ jobs:
       run: mvn clean install
 
     - name: Build Docker image
-      run: docker build . -t sql/Dockerfile:latest
+      run: docker build . -t sql/dockerfile:latest
