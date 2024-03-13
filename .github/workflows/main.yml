@@ -25,3 +25,12 @@ jobs:
 
     - name: Build Docker image
       run: docker build -f sql/Dockerfile -t sql/dockerfile:latest .
+
+    - name: Unit Tests
+       run: mvn -Dtest=com.napier.sem.MyTest test
+     
+    - name: Package and Run docker compose
+       run: |
+         mvn package -DskipTests
+         docker-compose up --abort-on-container-exit
+
