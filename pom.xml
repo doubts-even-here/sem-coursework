@@ -4,6 +4,14 @@
   <groupId>SEM-Group-2</groupId>
   <artifactId>group2-coursework</artifactId>
   <packaging>jar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
   <version>1.0-SNAPSHOT</version>
   <name>group2-coursework</name>
   <url>http://maven.apache.org</url>
