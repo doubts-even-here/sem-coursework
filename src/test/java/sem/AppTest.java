@@ -1,4 +1,4 @@
-package SEM-Group-2;
+package sem;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

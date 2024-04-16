@@ -1,4 +1,4 @@
-package SEM-Group-2;
+package sem;
 
 
 public class App 

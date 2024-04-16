@@ -1,3 +1,8 @@
+* Master Build Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/doubts-even-here/sem-coursework/main.yml?branch=master)
+* Develop Branch Status ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/doubts-even-here/sem-coursework.yml?branch=develop)
+* License [![LICENSE](https://img.shields.io/github/license/doubts-even-here/sem-coursework.svg?style=flat-square)](https://github.com/<doubts-even-here/sem-coursework/blob/master/LICENSE)
+* Release [![Releases](https://img.shields.io/github/release/doubts-even-here/sem-coursework/all.svg?style=flat-square)](https://github.com/doubts-even-here/sem-coursework/releases)
+
 
 * Code Review 1
     - [ ] GitHub project for coursework set-up.
