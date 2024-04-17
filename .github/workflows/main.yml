@@ -16,7 +16,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Unit Tests
-        run: mvn -Dtest=sem.MyTest test
+        run: mvn -Dtest=SEM-Group-2MyTest test
 
   build:
     name: Build and Start Using docker-compose
