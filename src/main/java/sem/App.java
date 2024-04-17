@@ -18,10 +18,17 @@ public class App {
         } else {
             a.connect(args[0], Integer.parseInt(args[1]));
         }
+
         // Get list of cities in 'Arg'
         List<City> citiesInArg = a.getCitiesInCountry("Arg");
-        // Display results
-        a.displayCities(citiesInArg);
+
+        // Create ArrayList and assign it to a variable
+        ArrayList<City> displayCities = new ArrayList<>(citiesInArg);
+
+        // Display results (You might need to implement this)
+        // Assuming you have a method named displayCities that takes an ArrayList<City> as an argument
+        a.displayCities(displayCities);
+
         // Disconnect from database
         a.disconnect();
     }
@@ -117,20 +124,23 @@ public class App {
         return cities;
     }
 
-    /**
-     * Display a list of cities.
-     * @param cities The list of cities to display.
-     */
-    public void displayCities(List<City> cities) {
-        if (!cities.isEmpty()) {
-            for (City city : cities) {
-                System.out.println("City Name: " + city.Name);
-                System.out.println("Country Code: " + city.CountryCode);
-                System.out.println("Population: " + city.Population);
-                System.out.println("--------------------------");
-            }
-        } else {
-            System.out.println("No cities found.");
+    public void displayCities(ArrayList<City> cities)
+    {
+        // Check employees is not null
+        if (cities == null)
+        {
+            System.out.println("No cities");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-10s %-15s %-20s %-8s", "Emp No", "First Name", "Last Name", "Salary"));
+        // Loop over all employees in the list
+        for (City city : cities)
+        {
+            String emp_string =
+                    String.format("%-10s %-15s %-20s %-8s",
+                            city.Name, city.CountryCode, city.Population);
+            System.out.println(emp_string);
         }
     }
 }
