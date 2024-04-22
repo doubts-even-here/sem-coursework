@@ -2,7 +2,7 @@ package sem;
 
 public class City {
     /**
-     * City ID
+     *  City ID
      */
     public int ID;
 
@@ -17,7 +17,7 @@ public class City {
     public String CountryCode;
 
     /**
-     * District where the city is located
+     * District
      */
     public String District;
 

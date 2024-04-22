@@ -19,15 +19,9 @@ public class App {
             a.connect(args[0], Integer.parseInt(args[1]));
         }
 
-        // Get list of cities in 'Arg'
-        List<City> citiesInArg = a.getCitiesInCountry("Arg");
+        long worldPopulation = a.getWorldPopulation();
 
-        // Create ArrayList and assign it to a variable
-        ArrayList<City> displayCities = new ArrayList<>(citiesInArg);
-
-        // Display results (You might need to implement this)
-        // Assuming you have a method named displayCities that takes an ArrayList<City> as an argument
-        a.displayCities(displayCities);
+        System.out.println("World Population: " + worldPopulation);
 
         // Disconnect from database
         a.disconnect();
@@ -93,54 +87,26 @@ public class App {
     }
 
     /**
-     * Retrieve a list of cities in a specific country.
-     * @param countryCode The country code to search for cities.
-     * @return A list of cities in the specified country.
+     * Retrieve the population of the whole world.
+     * @return The population of the whole world.
      */
-    public List<City> getCitiesInCountry(String countryCode) {
-        List<City> cities = new ArrayList<>();
+    public long getWorldPopulation() {
+        long worldPopulation = 0;
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect =
-                    "SELECT Name, CountryCode, Population " +
-                            "FROM city " +
-                            "WHERE CountryCode = '" + countryCode + "'";
+            String strSelect = "SELECT SUM(Population) AS WorldPopulation FROM country";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Iterate through the result set and create City objects
-            while (rset.next()) {
-                City city = new City();
-                city.Name = rset.getString("Name");
-                city.CountryCode = rset.getString("CountryCode");
-                city.Population = rset.getInt("Population");
-                cities.add(city);
+            // Get the result
+            if (rset.next()) {
+                worldPopulation = rset.getLong("WorldPopulation");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in country: " + countryCode);
+            System.out.println("Failed to get world population");
         }
-        return cities;
-    }
-
-    public void displayCities(ArrayList<City> cities)
-    {
-        // Check employees is not null
-        if (cities == null)
-        {
-            System.out.println("No cities");
-            return;
-        }
-        // Print header
-        System.out.println(String.format("%-10s %-15s %-20s %-8s", "Emp No", "First Name", "Last Name", "Salary"));
-        // Loop over all employees in the list
-        for (City city : cities)
-        {
-            String emp_string =
-                    String.format("%-10s %-15s %-20s %-8s",
-                            city.Name, city.CountryCode, city.Population);
-            System.out.println(emp_string);
-        }
+        return worldPopulation;
     }
 }

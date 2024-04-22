@@ -4,19 +4,18 @@ import sem.App;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class MyTest
-{
+public class MyTest {
     static App app;
 
     @BeforeAll
-    static void init()
-    {
+    static void init() {
         app = new App();
+        app.connect("localhost:33060", 10000);
     }
 
     @Test
-    void displayCitiesTestNull()
-    {
-        app.displayCities(null);
+    void getWorldPopulationTest() {
+        long population = app.getWorldPopulation();
+        assertNotEquals(0, population);
     }
 }
